@@ -1,0 +1,8 @@
+provider: google
+google:
+  project: "<gcp-project-id>"
+txtOwnerId: ha-platform
+domainFilters: [ "example.com" ]
+sources: [ ingress ]
+policy: sync
+logLevel: info

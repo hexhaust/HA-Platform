@@ -1,0 +1,11 @@
+provider: azure
+azure:
+  resourceGroup: "<dns-resource-group>"
+  subscriptionId: "<subscription-id>"
+  tenantId: "<tenant-id>"
+  useManagedIdentityExtension: true
+txtOwnerId: ha-platform
+domainFilters: [ "example.com" ]
+sources: [ ingress ]
+policy: sync
+logLevel: info

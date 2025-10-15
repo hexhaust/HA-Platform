@@ -1,0 +1,17 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+crash.log
+override.tf
+terraform.tfvars
+.terraform.lock.hcl
+
+# Kubernetes client
+.kube/
+*.kubeconfig
+
+# OS & tools
+.DS_Store
+Thumbs.db
+.env

@@ -1,0 +1,8 @@
+provider: aws
+txtOwnerId: ha-platform
+policy: sync
+domainFilters: [ "example.com" ]
+interval: 1m
+registry: txt
+sources: [ ingress ]
+logLevel: info

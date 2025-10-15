@@ -1,0 +1,16 @@
+name: Deploy (stub)
+on:
+  workflow_dispatch:
+    inputs:
+      cluster:
+        description: "kube context to target"
+        required: true
+        default: "aws-us-east-1"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Show plan (manual)
+        run: |
+          echo "This repo expects GitOps (Argo CD/Flux) or manual 'kubectl apply -k cluster-addons/base' then 'kubectl apply -k apps/hello'."

@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: hello
+  namespace: hello
+  labels: { app: hello }
+spec:
+  replicas: 3
+  selector:
+    matchLabels: { app: hello }
+  template:
+    metadata:
+      labels: { app: hello }
+    spec:
+      containers:
+        - name: web
+          image: ghcr.io/nginxdemos/hello:plain-text
+          ports: [{ containerPort: 80 }]
+  strategy:
+    blueGreen:
+      activeService: hello-stable
+      previewService: hello-preview
+      autoPromotionEnabled: false
+      autoPromotionSeconds: 0
